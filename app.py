@@ -8,7 +8,11 @@ import urllib.request
 import numpy as np
 
 app = Flask(__name__)
+
 @app.route('/')
+def index():
+    return render_template('index.html')
+@app.route('/predict')
 def home():
     url = "car_white.jpg"
     image = cv2.imread(url) 
